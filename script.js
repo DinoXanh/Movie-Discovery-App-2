@@ -134,3 +134,39 @@ window.onclick = function (e) {
 }
 
 showMovies(movies);
+const btn35=document.getElementById("btn35");
+const btn36=document.getElementById("btn36");
+
+const imageModal=document.getElementById("imageModal");
+const closeImage=document.getElementById("closeImage");
+
+btn35.onclick=function(){
+
+    imageModal.style.display="flex";
+
+}
+
+closeImage.onclick=function(){
+
+    imageModal.style.display="none";
+
+}
+
+window.addEventListener("click",function(e){
+
+    if(e.target===imageModal){
+
+        imageModal.style.display="none";
+
+    }
+
+});
+
+btn36.onclick=function(){
+
+    window.open(
+        "https://dinoxanh.github.io/Bai36/",
+        "_blank"
+    );
+
+}
