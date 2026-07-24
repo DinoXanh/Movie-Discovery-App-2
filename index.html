@@ -20,95 +20,30 @@
     </header>
 
     <aside class="sidebar">
-        <h2>Bộ lọc</h2>
 
-        <div class="filter">
-            <label>Thể loại</label>
-            <select>
-                <option>Tất cả</option>
-                <option>Anime</option>
-                <option>Khoa học viễn tưởng</option>
-                <option>Siêu anh hùng</option>
-            </select>
-        </div>
+        <h2>Tìm kiếm</h2>
 
-        <div class="filter">
-            <label>Năm phát hành</label>
-            <select>
-                <option>Tất cả</option>
-                <option>2026</option>
-                <option>2025</option>
-                <option>2023</option>
-                <option>2021</option>
-                <option>2019</option>
-                <option>2017</option>
-                <option>2014</option>
-            </select>
-        </div>
+        <input
+            type="text"
+            id="search"
+            placeholder="Nhập tên phim..."
+        >
+
+        <h2>Thể loại</h2>
+
+        <!-- JavaScript sẽ tự tạo checkbox -->
+        <div id="genreList"></div>
+
     </aside>
 
-    <main class="main">
-
-        <div class="movie-card">
-            <img src="images/part1.webp" alt="Girl und Panzer Part 1">
-            <div class="info">
-                <h3>Girl und Panzer das Finale Part 1</h3>
-                <p>2017</p>
-            </div>
-        </div>
-
-        <div class="movie-card">
-            <img src="images/part2.webp" alt="Girl und Panzer Part 2">
-            <div class="info">
-                <h3>Girl und Panzer das Finale Part 2</h3>
-                <p>2019</p>
-            </div>
-        </div>
-
-        <div class="movie-card">
-            <img src="images/part3.webp" alt="Girl und Panzer Part 3">
-            <div class="info">
-                <h3>Girl und Panzer das Finale Part 3</h3>
-                <p>2021</p>
-            </div>
-        </div>
-
-        <div class="movie-card">
-            <img src="images/part4.webp" alt="Girl und Panzer Part 4">
-            <div class="info">
-                <h3>Girl und Panzer das Finale Part 4</h3>
-                <p>2023</p>
-            </div>
-        </div>
-
-        <div class="movie-card">
-            <img src="images/part5.webp" alt="Girl und Panzer Part 5">
-            <div class="info">
-                <h3>Girl und Panzer das Finale Part 5</h3>
-                <p>2025</p>
-            </div>
-        </div>
-
-        <div class="movie-card">
-            <img src="images/interstellar.jpg" alt="Interstellar">
-            <div class="info">
-                <h3>Interstellar</h3>
-                <p>2014</p>
-            </div>
-        </div>
-
-        <div class="movie-card">
-            <img src="images/spider.jpg" alt="Spider-Man Brand New Day">
-            <div class="info">
-                <h3>Spider-Man: Brand New Day</h3>
-                <p>2026</p>
-            </div>
-        </div>
+    <!-- JavaScript sẽ tự tạo các Movie Card -->
+    <main class="main" id="movieList">
 
     </main>
 
 </div>
 
+<script src="app.js"></script>
 <script src="script.js"></script>
 
 </body>
