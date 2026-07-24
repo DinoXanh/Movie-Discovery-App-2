@@ -1,88 +1,136 @@
-const movieList=document.getElementById("movieList");
-const genreList=document.getElementById("genreList");
-const search=document.getElementById("search");
-const dark=document.getElementById("darkMode");
+const movieList = document.getElementById("movieList");
+const genreList = document.getElementById("genreList");
+const search = document.getElementById("search");
+const dark = document.getElementById("darkMode");
 
-dark.addEventListener("change",()=>{
+const modal = document.getElementById("modal");
+const modalPoster = document.getElementById("modalPoster");
+const modalTitle = document.getElementById("modalTitle");
+const modalYear = document.getElementById("modalYear");
+const modalDirector = document.getElementById("modalDirector");
+const modalActors = document.getElementById("modalActors");
+const modalDescription = document.getElementById("modalDescription");
+const close = document.getElementById("close");
+
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+    dark.checked = true;
+}
+
+dark.addEventListener("change", () => {
     document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("dark")) {
+        localStorage.setItem("theme", "dark");
+    } else {
+        localStorage.setItem("theme", "light");
+    }
 });
 
-function showMovies(list){
+function showMovies(list) {
 
-movieList.innerHTML="";
+    movieList.innerHTML = "";
 
-list.forEach(movie=>{
+    if (list.length === 0) {
 
-movieList.innerHTML+=`
+        movieList.innerHTML = `
+            <div class="empty">
+                Không tìm thấy phim.
+            </div>
+        `;
 
-<div class="movie-card">
+        return;
+    }
 
-<img src="${movie.poster}">
+    list.forEach(movie => {
 
-<div class="info">
+        const card = document.createElement("div");
 
-<h3>${movie.title}</h3>
+        card.className = "movie-card";
 
-<p>${movie.year}</p>
+        card.innerHTML = `
+            <img src="${movie.poster}" alt="${movie.title}">
+            <div class="info">
+                <h3>${movie.title}</h3>
+                <p>${movie.year}</p>
+            </div>
+        `;
 
-</div>
+        card.addEventListener("click", () => openModal(movie));
 
-</div>
+        movieList.appendChild(card);
 
-`;
-
-});
+    });
 
 }
 
-const genres=[...new Set(movies.flatMap(movie=>movie.genre))];
+const genres = [...new Set(movies.flatMap(movie => movie.genre))];
 
-genres.forEach(g=>{
+genres.forEach(g => {
 
-genreList.innerHTML+=`
-
-<label>
-
-<input type="checkbox" value="${g}">
-
-${g}
-
-</label><br>
-
-`;
+    genreList.innerHTML += `
+        <label>
+            <input type="checkbox" value="${g}">
+            ${g}
+        </label>
+    `;
 
 });
 
-function filterMovies(){
+function filterMovies() {
 
-const keyword=search.value.toLowerCase();
+    const keyword = search.value.toLowerCase();
 
-const checked=[
+    const checked = [
+        ...document.querySelectorAll("#genreList input:checked")
+    ].map(cb => cb.value);
 
-...document.querySelectorAll("#genreList input:checked")
+    const result = movies.filter(movie => {
 
-].map(cb=>cb.value);
+        const matchName =
+            movie.title.toLowerCase().includes(keyword);
 
-const result=movies.filter(movie=>{
+        const matchGenre =
+            checked.length === 0 ||
+            checked.some(g => movie.genre.includes(g));
 
-const matchName=movie.title.toLowerCase().includes(keyword);
+        return matchName && matchGenre;
 
-const matchGenre=
+    });
 
-checked.length===0||
-
-checked.some(g=>movie.genre.includes(g));
-
-return matchName&&matchGenre;
-
-});
-
-showMovies(result);
+    showMovies(result);
 
 }
 
-search.addEventListener("input",filterMovies);
+search.addEventListener("input", filterMovies);
 
-genreList.addEventListener("change",filterMovies);
+genreList.addEventListener("change", filterMovies);
+
+function openModal(movie) {
+
+    modalPoster.src = movie.poster;
+    modalTitle.textContent = movie.title;
+    modalYear.textContent = movie.year;
+    modalDirector.textContent = movie.director;
+    modalActors.textContent = movie.actors;
+    modalDescription.textContent = movie.description;
+
+    modal.style.display = "flex";
+
+}
+
+close.onclick = function () {
+    modal.style.display = "none";
+}
+
+window.onclick = function (e) {
+
+    if (e.target === modal) {
+
+        modal.style.display = "none";
+
+    }
+
+}
 
 showMovies(movies);
