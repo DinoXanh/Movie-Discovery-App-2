@@ -3,7 +3,7 @@ const movies = [
     title: "Girl und Panzer das Finale Part 1",
     year: 2017,
     genre: ["Anime"],
-    poster: "images/part1.webp",
+    poster: "images/part1.jpg",
     director: "Tsutomu Mizushima",
     actors: "Mai Fuchigami, Ai Kayano",
     description: "Phần đầu tiên của Girl und Panzer das Finale, nơi các đội xe tăng nữ tiếp tục bước vào giải đấu Sensha-do đầy hấp dẫn."
@@ -12,7 +12,7 @@ const movies = [
     title: "Girl und Panzer das Finale Part 2",
     year: 2019,
     genre: ["Anime"],
-    poster: "images/part2.webp",
+    poster: "images/part2.jpg",
     director: "Tsutomu Mizushima",
     actors: "Mai Fuchigami, Ai Kayano",
     description: "Ooarai tiếp tục đối đầu với những đối thủ mạnh trong các trận chiến xe tăng đầy chiến thuật."
@@ -21,7 +21,7 @@ const movies = [
     title: "Girl und Panzer das Finale Part 3",
     year: 2021,
     genre: ["Anime"],
-    poster: "images/part3.webp",
+    poster: "images/part3.jpg",
     director: "Tsutomu Mizushima",
     actors: "Mai Fuchigami, Ai Kayano",
     description: "Cuộc thi Sensha-do bước vào giai đoạn căng thẳng với những trận đấu gay cấn."
@@ -30,7 +30,7 @@ const movies = [
     title: "Girl und Panzer das Finale Part 4",
     year: 2023,
     genre: ["Anime"],
-    poster: "images/part4.webp",
+    poster: "images/part4.jpg",
     director: "Tsutomu Mizushima",
     actors: "Mai Fuchigami, Ai Kayano",
     description: "Những trận chiến quyết định diễn ra với chiến thuật và tinh thần đồng đội được đẩy lên cao."
@@ -39,7 +39,7 @@ const movies = [
     title: "Girl und Panzer das Finale Part 5",
     year: 2025,
     genre: ["Anime"],
-    poster: "images/part5.webp",
+    poster: "images/part5.jpg",
     director: "Tsutomu Mizushima",
     actors: "Mai Fuchigami, Ai Kayano",
     description: "Phần thứ năm tiếp tục hành trình của đội Ooarai hướng tới trận chung kết."
