@@ -21,7 +21,7 @@
 
     <aside class="sidebar">
 
-        <h2>Tìm kiếm</h2>
+        <h2>🔍 Tìm kiếm</h2>
 
         <input
             type="text"
@@ -29,9 +29,23 @@
             placeholder="Nhập tên phim..."
         >
 
-        <h2>Thể loại</h2>
+        <h2>🎭 Thể loại</h2>
 
         <div id="genreList"></div>
+
+        <hr style="margin:25px 0;border:1px solid rgba(255,255,255,.2);">
+
+        <div class="menu-button">
+
+            <button id="btn35">
+                📄 Bài 35
+            </button>
+
+            <button id="btn36">
+                🌐 Bài 36
+            </button>
+
+        </div>
 
     </aside>
 
@@ -40,6 +54,8 @@
     </main>
 
 </div>
+
+<!-- Modal phim -->
 
 <div id="modal" class="modal">
 
@@ -58,6 +74,24 @@
         <p><b>Diễn viên:</b> <span id="modalActors"></span></p>
 
         <p id="modalDescription"></p>
+
+    </div>
+
+</div>
+
+<!-- Modal Bài 35 -->
+
+<div id="imageModal" class="modal">
+
+    <div class="modal-content">
+
+        <span id="closeImage">&times;</span>
+
+        <img
+            src="images/ketqua.jpg"
+            id="ketQuaImg"
+            alt="Kết quả bài 35"
+        >
 
     </div>
 
